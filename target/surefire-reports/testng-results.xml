@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-07T17:37:51 BDT" name="Suite" finished-at="2023-04-07T17:39:44 BDT" duration-ms="113086">
+  <suite started-at="2023-04-09T02:45:23 BDT" name="Suite" finished-at="2023-04-09T02:47:11 BDT" duration-ms="108430">
     <groups>
     </groups>
-    <test started-at="2023-04-07T17:37:51 BDT" name="Test" finished-at="2023-04-07T17:39:44 BDT" duration-ms="113086">
+    <test started-at="2023-04-09T02:45:23 BDT" name="Test" finished-at="2023-04-09T02:47:11 BDT" duration-ms="108430">
       <class name="WafiLifePagesTests.WafiLifeTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@58ce9668]" started-at="2023-04-07T17:37:52 BDT" name="setBrowser" finished-at="2023-04-07T17:38:12 BDT" duration-ms="19791" status="PASS">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@58ce9668]" started-at="2023-04-09T02:45:23 BDT" name="setBrowser" finished-at="2023-04-09T02:45:43 BDT" duration-ms="19872" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="wafiLifeTestCases()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@58ce9668]" started-at="2023-04-07T17:38:12 BDT" name="wafiLifeTestCases" finished-at="2023-04-07T17:39:43 BDT" duration-ms="90403" status="PASS">
+        <test-method signature="wafiLifeTestCases()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@58ce9668]" started-at="2023-04-09T02:45:43 BDT" name="wafiLifeTestCases" finished-at="2023-04-09T02:47:11 BDT" duration-ms="87637" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- wafiLifeTestCases -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@58ce9668]" started-at="2023-04-07T17:39:43 BDT" name="quitBrowser" finished-at="2023-04-07T17:39:44 BDT" duration-ms="1308" status="PASS">
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@58ce9668]" started-at="2023-04-09T02:47:11 BDT" name="quitBrowser" finished-at="2023-04-09T02:47:11 BDT" duration-ms="654" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->

@@ -21,7 +21,6 @@ public class WafiLifeTest extends BaseDriverSetup{
         wafiLifeHomePage.takeScreenShot("Wafilife Home Page");
         Thread.sleep(5000);
 
-
         //Click  লেখক from the menuClick  লেখক from the menu
         wafiLifeHomePage.clickOnElement(wafiLifeHomePage.LEKHOK);
         wafiLifeHomePage.takeScreenShot("Writer List");
@@ -54,7 +53,6 @@ public class WafiLifeTest extends BaseDriverSetup{
         booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_ADDTOCART);
         booksDetailsPage.takeScreenShot("Book Details");
         Thread.sleep(5000);
-
 
         //Click অর্ডার সম্পন্ন করুন
         booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_COMPLETE_ORDER);
@@ -110,7 +108,6 @@ public class WafiLifeTest extends BaseDriverSetup{
         Thread.sleep(2000);
 
         //অর্ডার সম্পন্ন করুন
-       
 
     }
 

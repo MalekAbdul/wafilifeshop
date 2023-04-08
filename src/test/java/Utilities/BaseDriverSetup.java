@@ -8,21 +8,17 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
 import java.time.Duration;
 
 public class BaseDriverSetup {
     private static String browserName = System.getProperty("browser", "chrome");
     private static final ThreadLocal<WebDriver> LOCAL_DRIVER = new ThreadLocal<WebDriver>();
-
     public static void setDriver(WebDriver driver) {
         BaseDriverSetup.LOCAL_DRIVER.set(driver);
     }
-
     public static WebDriver getDriver() {
         return LOCAL_DRIVER.get();
     }
-
     public static WebDriver getBrowser(String browserName) {
         switch (browserName.toLowerCase()) {
             case "chrome":
@@ -43,7 +39,6 @@ public class BaseDriverSetup {
                 throw new RuntimeException("Browser not Found! using given name: " + browserName);
         }
     }
-
     @BeforeMethod
     public static synchronized void setBrowser() {
         WebDriver webDriver = getBrowser(browserName);
@@ -51,7 +46,6 @@ public class BaseDriverSetup {
         webDriver.manage().window().maximize();
         setDriver(webDriver);
     }
-
     @AfterMethod
     public static synchronized void quitBrowser() {
         getDriver().quit();
