@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="methods" name="Suite">
+    <test thread-count="2" parallel="methods" name="Test">
+        <classes>
+            <class name="WafiLifePagesTests.WafiLifeTest"/>
+            <!-- Test  <class name="testcases.DarazHelpCenterPageTest"/> -->
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
