@@ -37,6 +37,7 @@ public class CustomMethods {
         getElement(locator).sendKeys(Keys.ARROW_DOWN);
         getElement(locator).sendKeys(Keys.ENTER);
     }
+
     public void takeScreenShot(String name) {
         Allure.addAttachment(name, new ByteArrayInputStream(((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.BYTES)));
     }

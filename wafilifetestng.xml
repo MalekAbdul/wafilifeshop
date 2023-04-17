@@ -4,7 +4,6 @@
     <test thread-count="2" parallel="methods" name="Test">
         <classes>
             <class name="WafiLifePagesTests.WafiLifeTest"/>
-            <!-- Test  <class name="testcases.DarazHelpCenterPageTest"/> -->
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
