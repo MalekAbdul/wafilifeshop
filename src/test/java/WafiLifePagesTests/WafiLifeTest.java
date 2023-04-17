@@ -2,8 +2,6 @@ package WafiLifePagesTests;
 
 import Utilities.BaseDriverSetup;
 import WafiLifePages.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -19,8 +17,8 @@ public class WafiLifeTest extends BaseDriverSetup{
     public void goWafilifeHomepageTest()
     {
         getDriver().get(wafiLifeHomePage.WAFILIFE_URL);
-        String wafilifeTitle = "Buy Islamic Books - Online Book Shop in Bangladesh | Wafilife";
-        Assert.assertEquals(getDriver().getTitle(), wafilifeTitle);
+        String aspectedTitle = "Buy Islamic Books - Online Book Shop in Bangladesh | Wafilife";
+        Assert.assertEquals(getDriver().getTitle(), aspectedTitle);
         wafiLifeHomePage.takeScreenShot("Wafilife Home Page");
     }
 
@@ -40,8 +38,15 @@ public class WafiLifeTest extends BaseDriverSetup{
         getDriver().get(wafiLifeHomePage.WAFILIFE_URL);
         wafiLifeHomePage.clickOnElement(wafiLifeHomePage.LEKHOK);
         wafiLifeWritterListPage.scrollToElemnt(wafiLifeWritterListPage.NEXTPAGE_BUTTON);
+        Assert.assertEquals(wafiLifeWritterListPage.getElement(wafiLifeWritterListPage.NEXTPAGE_BUTTON).getText(), "→");
+        System.out.println(wafiLifeWritterListPage.getElement(wafiLifeWritterListPage.NEXTPAGE_BUTTON).getText());
         wafiLifeHomePage.clickOnElement(wafiLifeWritterListPage.NEXTPAGE_BUTTON);
+        wafiLifeWritterListPage.takeScreenShot("Next Page");
     }
+
+
+
+    @Test
     public void wafiLifeTestCases() throws InterruptedException {
 
         //go back to previous page
