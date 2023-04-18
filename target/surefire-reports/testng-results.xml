@@ -1,21 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-17T12:07:25 BDT" name="Suite" finished-at="2023-04-17T12:08:57 BDT" duration-ms="92683">
+  <suite started-at="2023-04-18T12:44:06 BDT" name="Suite" finished-at="2023-04-18T12:44:21 BDT" duration-ms="14360">
     <groups>
     </groups>
-    <test started-at="2023-04-17T12:07:25 BDT" name="Test" finished-at="2023-04-17T12:08:57 BDT" duration-ms="92683">
+    <test started-at="2023-04-18T12:44:06 BDT" name="Test" finished-at="2023-04-18T12:44:21 BDT" duration-ms="14360">
       <class name="WafiLifePagesTests.WafiLifeTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@58ce9668]" started-at="2023-04-17T12:07:25 BDT" name="setBrowser" finished-at="2023-04-17T12:07:31 BDT" duration-ms="5672" status="PASS">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:06 BDT" name="setBrowser" finished-at="2023-04-18T12:44:09 BDT" duration-ms="2191" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method signature="wafiLifeTestCases()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@58ce9668]" started-at="2023-04-17T12:07:31 BDT" name="wafiLifeTestCases" finished-at="2023-04-17T12:08:57 BDT" duration-ms="86049" status="PASS">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:06 BDT" name="setBrowser" finished-at="2023-04-18T12:44:10 BDT" duration-ms="3085" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- wafiLifeTestCases -->
-        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@58ce9668]" started-at="2023-04-17T12:08:57 BDT" name="quitBrowser" finished-at="2023-04-17T12:08:57 BDT" duration-ms="733" status="PASS">
+        </test-method> <!-- setBrowser -->
+        <test-method signature="clickOnWriterMenu()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:09 BDT" name="clickOnWriterMenu" finished-at="2023-04-18T12:44:13 BDT" duration-ms="4547" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- clickOnWriterMenu -->
+        <test-method signature="goNextPageTest()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:10 BDT" name="goNextPageTest" finished-at="2023-04-18T12:44:16 BDT" duration-ms="5940" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goNextPageTest -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:13 BDT" name="quitBrowser" finished-at="2023-04-18T12:44:14 BDT" duration-ms="338" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:14 BDT" name="setBrowser" finished-at="2023-04-18T12:44:14 BDT" duration-ms="768" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="goWafilifeHomepageTest()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:14 BDT" name="goWafilifeHomepageTest" finished-at="2023-04-18T12:44:19 BDT" duration-ms="4324" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goWafilifeHomepageTest -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:16 BDT" name="quitBrowser" finished-at="2023-04-18T12:44:16 BDT" duration-ms="344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:16 BDT" name="setBrowser" finished-at="2023-04-18T12:44:17 BDT" duration-ms="880" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setBrowser -->
+        <test-method signature="selectAuthor()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:17 BDT" name="selectAuthor" finished-at="2023-04-18T12:44:20 BDT" duration-ms="3675" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectAuthor -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:19 BDT" name="quitBrowser" finished-at="2023-04-18T12:44:19 BDT" duration-ms="359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method is-config="true" signature="quitBrowser()[pri:0, instance:WafiLifePagesTests.WafiLifeTest@b4711e2]" started-at="2023-04-18T12:44:20 BDT" name="quitBrowser" finished-at="2023-04-18T12:44:21 BDT" duration-ms="309" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quitBrowser -->

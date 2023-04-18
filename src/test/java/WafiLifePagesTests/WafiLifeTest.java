@@ -26,52 +26,58 @@ public class WafiLifeTest extends BaseDriverSetup{
     public void clickOnWriterMenu(){
 
         getDriver().get(wafiLifeHomePage.WAFILIFE_URL);
+
         String text = wafiLifeHomePage.getElement(wafiLifeHomePage.LEKHOK).getText();
         Assert.assertEquals(text, "লেখক");
-        wafiLifeHomePage.clickOnElement(wafiLifeHomePage.LEKHOK);
+        wafiLifeHomePage.checkEnableAndClickOnElement(wafiLifeHomePage.LEKHOK);
         wafiLifeHomePage.takeScreenShot("Click to Writer Menu Button");
+
     }
 
     @Test
     public void goNextPageTest()
     {
         getDriver().get(wafiLifeHomePage.WAFILIFE_URL);
-        wafiLifeHomePage.clickOnElement(wafiLifeHomePage.LEKHOK);
+        wafiLifeHomePage.checkEnableAndClickOnElement(wafiLifeHomePage.LEKHOK);
         wafiLifeWritterListPage.scrollToElemnt(wafiLifeWritterListPage.NEXTPAGE_BUTTON);
         Assert.assertEquals(wafiLifeWritterListPage.getElement(wafiLifeWritterListPage.NEXTPAGE_BUTTON).getText(), "→");
         System.out.println(wafiLifeWritterListPage.getElement(wafiLifeWritterListPage.NEXTPAGE_BUTTON).getText());
-        wafiLifeHomePage.clickOnElement(wafiLifeWritterListPage.NEXTPAGE_BUTTON);
+        wafiLifeHomePage.checkEnableAndClickOnElement(wafiLifeWritterListPage.NEXTPAGE_BUTTON);
         wafiLifeWritterListPage.takeScreenShot("Next Page");
+    }
+
+    @Test
+    public void selectAuthor()
+    {
+        getDriver().get(wafiLifeWritterListPage.AUTHORLISTPAGE_URL);
+        Assert.assertEquals(wafiLifeWritterListPage.getElement(wafiLifeWritterListPage.Dr_AyubAli).getText(), "Dr. Ayub Ali");
+        wafiLifeWritterListPage.checkEnableAndClickOnElement(wafiLifeWritterListPage.Dr_AyubAli);
     }
 
 
 
-    @Test
-    public void wafiLifeTestCases() throws InterruptedException {
 
-        //go back to previous page
-        getDriver().navigate().back();
-        Thread.sleep(5000);
+    public void wafiLifeTestCases() throws InterruptedException {
 
         //Move to an Author location
         wafiLifeWritterListPage.moveOnElement(wafiLifeWritterListPage.Dr_AyubAli);
         Thread.sleep(5000);
 
         //Select an Author
-        wafiLifeWritterListPage.clickOnElement(wafiLifeWritterListPage.Dr_AyubAli);
+        wafiLifeWritterListPage.checkEnableAndClickOnElement(wafiLifeWritterListPage.Dr_AyubAli);
         Thread.sleep(5000);
 
         //View Book Details
-        drAyubAliBookspage.clickOnElement(drAyubAliBookspage.BOOK_DISCRETEMATH);
+        drAyubAliBookspage.checkEnableAndClickOnElement(drAyubAliBookspage.BOOK_DISCRETEMATH);
         Thread.sleep(5000);
 
         //Click অর্ডার করুন
-        booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_ADDTOCART);
+        booksDetailsPage.checkEnableAndClickOnElement(booksDetailsPage.BUTTON_ADDTOCART);
         booksDetailsPage.takeScreenShot("Book Details");
         Thread.sleep(5000);
 
         //Click অর্ডার সম্পন্ন করুন
-        booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_COMPLETE_ORDER);
+        booksDetailsPage.checkEnableAndClickOnElement(booksDetailsPage.BUTTON_COMPLETE_ORDER);
         Thread.sleep(5000);
         booksDetailsPage.takeScreenShot("Oder Page");
 
@@ -82,7 +88,7 @@ public class WafiLifeTest extends BaseDriverSetup{
     public void checkOutPageInput() throws InterruptedException {
 
         //নতুন অ্যাকাউন্ট তৈরি করতে টিক দিন
-        wafiLifeCheckoutPage.clickOnElement(wafiLifeCheckoutPage.CHECKBOX_CREATE_ACCOUNT);
+        wafiLifeCheckoutPage.checkEnableAndClickOnElement(wafiLifeCheckoutPage.CHECKBOX_CREATE_ACCOUNT);
         Thread.sleep(2000);
 
         //পাসওয়ার্ড দিন *
@@ -106,7 +112,7 @@ public class WafiLifeTest extends BaseDriverSetup{
         Thread.sleep(2000);
 
         //জেলা *
-        wafiLifeCheckoutPage.clickOnElement(wafiLifeCheckoutPage.ZILLA_DROPDOWN_ICON);
+        wafiLifeCheckoutPage.checkEnableAndClickOnElement(wafiLifeCheckoutPage.ZILLA_DROPDOWN_ICON);
         wafiLifeCheckoutPage.searchByValue(wafiLifeCheckoutPage.INPUT_ZILLA_SEARCH_FIELD, "Tangail");
         Thread.sleep(2000);
 
