@@ -33,6 +33,8 @@ public class CustomMethods {
            if(getElement(locator).isEnabled())
            {
                getElement(locator).click();
+           }else{
+               System.out.println("The Element is not enable to click!!!");
            }
        }
     }

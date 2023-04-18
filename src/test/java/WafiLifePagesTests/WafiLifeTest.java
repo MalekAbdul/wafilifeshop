@@ -19,6 +19,7 @@ public class WafiLifeTest extends BaseDriverSetup{
         getDriver().get(wafiLifeHomePage.WAFILIFE_URL);
         String aspectedTitle = "Buy Islamic Books - Online Book Shop in Bangladesh | Wafilife";
         Assert.assertEquals(getDriver().getTitle(), aspectedTitle);
+        Assert.assertEquals(getDriver().getCurrentUrl(), wafiLifeHomePage.WAFILIFE_URL);
         wafiLifeHomePage.takeScreenShot("Wafilife Home Page");
     }
 
@@ -26,10 +27,10 @@ public class WafiLifeTest extends BaseDriverSetup{
     public void clickOnWriterMenu(){
 
         getDriver().get(wafiLifeHomePage.WAFILIFE_URL);
-
         String text = wafiLifeHomePage.getElement(wafiLifeHomePage.LEKHOK).getText();
         Assert.assertEquals(text, "লেখক");
         wafiLifeHomePage.checkEnableAndClickOnElement(wafiLifeHomePage.LEKHOK);
+        Assert.assertEquals(getDriver().getCurrentUrl(), wafiLifeWritterListPage.AUTHORLISTPAGE_URL);
         wafiLifeHomePage.takeScreenShot("Click to Writer Menu Button");
 
     }
@@ -52,6 +53,7 @@ public class WafiLifeTest extends BaseDriverSetup{
         getDriver().get(wafiLifeWritterListPage.AUTHORLISTPAGE_URL);
         Assert.assertEquals(wafiLifeWritterListPage.getElement(wafiLifeWritterListPage.Dr_AyubAli).getText(), "Dr. Ayub Ali");
         wafiLifeWritterListPage.checkEnableAndClickOnElement(wafiLifeWritterListPage.Dr_AyubAli);
+
     }
 
 
