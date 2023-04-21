@@ -1,2 +1,6 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Apr 17 12:07:31 BDT 2023","Mon Apr 17 12:08:57 BDT 2023","86026","Suite","Test","WafiLifePagesTests.WafiLifeTest","WafiLifePagesTests.WafiLifeTest","wafiLifeTestCases","wafiLifeTestCases",""
+"passed","Thu Apr 20 04:14:39 BDT 2023","Thu Apr 20 04:14:43 BDT 2023","4021","Suite","Test","WafiLifePagesTests.WafiLifeTest","WafiLifePagesTests.WafiLifeTest","goWafilifeHomepageTest","goWafilifeHomepageTest",""
+"passed","Thu Apr 20 04:14:32 BDT 2023","Thu Apr 20 04:14:37 BDT 2023","4831","Suite","Test","WafiLifePagesTests.WafiLifeTest","WafiLifePagesTests.WafiLifeTest","clickOnWriterMenu","clickOnWriterMenu",""
+"passed","Thu Apr 20 04:14:45 BDT 2023","Thu Apr 20 04:14:47 BDT 2023","2366","Suite","Test","WafiLifePagesTests.WafiLifeTest","WafiLifePagesTests.WafiLifeTest","selectAuthor","selectAuthor",""
+"passed","Thu Apr 20 04:14:40 BDT 2023","Thu Apr 20 04:14:44 BDT 2023","4244","Suite","Test","WafiLifePagesTests.WafiLifeTest","WafiLifePagesTests.WafiLifeTest","selectABook","selectABook",""
+"passed","Thu Apr 20 04:14:33 BDT 2023","Thu Apr 20 04:14:38 BDT 2023","4854","Suite","Test","WafiLifePagesTests.WafiLifeTest","WafiLifePagesTests.WafiLifeTest","goNextPageTest","goNextPageTest",""
