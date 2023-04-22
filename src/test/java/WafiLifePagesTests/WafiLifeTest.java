@@ -1,7 +1,11 @@
 package WafiLifePagesTests;
 
 import Utilities.BaseDriverSetup;
+import Utilities.DataSet;
 import WafiLifePages.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -71,6 +75,7 @@ public class WafiLifeTest extends BaseDriverSetup{
         wafiLifeWritterListPage.clickOnElement(wafiLifeWritterListPage.Dr_AyubAli);
         Assert.assertEquals(getDriver().getCurrentUrl(), drAyubAliBookspage.DRAYUBALIBOOKSPAGE_URL);
         drAyubAliBookspage.takeScreenShot("Dr. Ayub Ali Book Page");
+
     }
 
     @Test
@@ -92,80 +97,69 @@ public class WafiLifeTest extends BaseDriverSetup{
         Assert.assertEquals(getDriver().getCurrentUrl(), "https://www.wafilife.com/shop/books/discrete-mathematics-snatok-4th-year");
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertEquals(getDriver().getTitle(), " ");
-       // Assert.assertEquals(getDriver().getTitle(), " ");
         System.out.println("Page Title: "+getDriver().getTitle());
         booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_ADDTOCART);
         booksDetailsPage.takeScreenShot("Book Add To Cart");
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(booksDetailsPage.getElement(booksDetailsPage.BUTTON_COMPLETE_ORDER)));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(booksDetailsPage.BUTTON_COMPLETE_ORDER));
         booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_COMPLETE_ORDER);
+        System.out.println("Page Title:"+getDriver().getTitle());
 
     }
 
+    @Test(dataProvider = "credentials", dataProviderClass = DataSet.class)
+    public void checkOutPageInput(String name, String phone, String email, String password) throws InterruptedException {
 
-
-
-    public void wafiLifeTestCases() throws InterruptedException {
-        //Click অর্ডার করুন
+        getDriver().get(booksDetailsPage.BOOKDEETAILSPAGE_URL);
         booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_ADDTOCART);
-        booksDetailsPage.takeScreenShot("Book Details");
-        Thread.sleep(5000);
-
-        //Click অর্ডার সম্পন্ন করুন
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(booksDetailsPage.BUTTON_COMPLETE_ORDER));
         booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_COMPLETE_ORDER);
-        Thread.sleep(5000);
-        booksDetailsPage.takeScreenShot("Oder Page");
-
-        //Provide all Information of  আপনার বিলিং এবং শিপিং তথ্য
-        checkOutPageInput();
-
-    }
-    public void checkOutPageInput() throws InterruptedException {
 
         //নতুন অ্যাকাউন্ট তৈরি করতে টিক দিন
         wafiLifeCheckoutPage.clickOnElement(wafiLifeCheckoutPage.CHECKBOX_CREATE_ACCOUNT);
-        Thread.sleep(2000);
-
         //পাসওয়ার্ড দিন *
-        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_PASSWORD_FIELD, "hijibiji");
-        Thread.sleep(2000);
-
+        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_PASSWORD_FIELD, password);
         //নাম
-        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_NAME_FIELD, "Abdul Malek");
-        Thread.sleep(2000);
-
+        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_NAME_FIELD, name);
         //ফোন নাম্বার *
-        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_PHONE_FIELD, "01777777777");
-        Thread.sleep(2000);
-
+        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_PHONE_FIELD, phone);
         //জরুরী ফোন (যদি থাকে)
         wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_EMERGENCY_PHONE_FIELD, "01666666666");
-        Thread.sleep(2000);
-
         //ইমেইল *
-        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_EMAIL_FIELD, "a1@gmail.com");
-        Thread.sleep(2000);
+        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_EMAIL_FIELD, email);
+        wafiLifeCheckoutPage.takeScreenShot("Input Credentials");
+
+    }
+
+    @Test(dataProvider = "Address", dataProviderClass = DataSet.class)
+    public void checkOutPageInputAddress(String district, String area, String address) throws InterruptedException {
+
+        getDriver().get(booksDetailsPage.BOOKDEETAILSPAGE_URL);
+        booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_ADDTOCART);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(booksDetailsPage.BUTTON_COMPLETE_ORDER));
+        booksDetailsPage.clickOnElement(booksDetailsPage.BUTTON_COMPLETE_ORDER);
 
         //জেলা *
         wafiLifeCheckoutPage.clickOnElement(wafiLifeCheckoutPage.ZILLA_DROPDOWN_ICON);
-        wafiLifeCheckoutPage.searchByValue(wafiLifeCheckoutPage.INPUT_ZILLA_SEARCH_FIELD, "Tangail");
-        Thread.sleep(2000);
+        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_ZILLA_SEARCH_FIELD, district);
+        wafiLifeCheckoutPage.getElement(wafiLifeCheckoutPage.INPUT_ZILLA_SEARCH_FIELD).sendKeys(Keys.ARROW_DOWN);
+        wafiLifeCheckoutPage.getElement(wafiLifeCheckoutPage.INPUT_ZILLA_SEARCH_FIELD).sendKeys(Keys.ENTER);
+        Assert.assertEquals(wafiLifeCheckoutPage.getElement(wafiLifeCheckoutPage.ZILLA_INPUT_FIELD).getText(), "Tangail");
 
         //এরিয়া/উপজেলা *
-        wafiLifeCheckoutPage.dropDownWithValue(wafiLifeCheckoutPage.INPUT_AREA_FIELD, "গোপালপুর");
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(wafiLifeCheckoutPage.INPUT_AREA_FIELD));
+        wafiLifeCheckoutPage.dropDownWithValue(wafiLifeCheckoutPage.INPUT_AREA_FIELD, area);
 
         //ঠিকানা *
-        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_ADDRESS_FIELD, "Hemnagar");
-        Thread.sleep(2000);
+        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_ADDRESS_FIELD, address);
 
         //অন্যান্য তথ্য (অর্ডার বা পণ্য ডেলিভারি সংক্রান্ত আরো কোনো তথ্য থাকলে দিন)
-        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_INFORMATION_FIELD, "Nai Nai");
-        wafiLifeCheckoutPage.takeScreenShot("Input info");
-        Thread.sleep(2000);
-
-        //অর্ডার সম্পন্ন করুন
+        wafiLifeCheckoutPage.writeText(wafiLifeCheckoutPage.INPUT_INFORMATION_FIELD, "Handle with Care!!!");
+        wafiLifeCheckoutPage.takeScreenShot("Input Address");
 
     }
+
 
 }

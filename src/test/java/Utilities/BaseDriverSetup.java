@@ -25,7 +25,7 @@ public class BaseDriverSetup {
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--remote-allow-origins=*");
-                chromeOptions.addArguments("headless");
+              //  chromeOptions.addArguments("headless");
                 return new ChromeDriver(chromeOptions);
 
             case "edge":

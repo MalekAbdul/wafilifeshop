@@ -45,12 +45,15 @@ public class CustomMethods {
         s.selectByVisibleText(value);
     }
 
-    public void searchByValue(By locator, String text)
+   /*
+   public void searchByValue(By locator, String text)
     {
         writeText(locator, text);
         getElement(locator).sendKeys(Keys.ARROW_DOWN);
         getElement(locator).sendKeys(Keys.ENTER);
     }
+
+    */
 
     public void takeScreenShot(String name)
     {

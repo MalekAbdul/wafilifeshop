@@ -11,6 +11,7 @@ public class WafiLifeCheckoutPage extends CustomMethods {
     public By INPUT_PHONE_FIELD = By.xpath("(//input[@id='billing_phone'])[1]");
     public By INPUT_EMERGENCY_PHONE_FIELD = By.xpath("//input[@id='billing_alternative_phone']");
     public By INPUT_EMAIL_FIELD = By.xpath("(//input[@id='billing_email'])[1]");
+    public By ZILLA_INPUT_FIELD = By.xpath("//span[@id='select2-billing_state-container']");
     public By ZILLA_DROPDOWN_ICON = By.xpath("(//span[@role='presentation'])[1]");
     public By INPUT_ZILLA_SEARCH_FIELD = By.xpath("(//input[@role='combobox'])[1]");
     public By INPUT_AREA_FIELD = By.xpath("(//select[@id='billing_area'])[1]");
